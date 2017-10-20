@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Crime in the U.S. </title>
+   <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+   <link rel="stylesheet" href="styles/second.css">
+   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+
+   <script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+
+</head>
+<body>
+
+<h1>Crime trends in the U.S. from 1997 to 2016</h1>
+
+<p>By Mary-Lou Watkinson</p>
+
+<p> The following charts show data on violent and property crime in the U.S. from the year 1997 to 2016 per 100,000 people. Violent crime fluctuates between decreasing and increasing, but it has decreased overall in present times compared to earlier years, despite what some may believe. Property crime, however, has been on a steady decline throughout the years. This data is important to understand because it breaks down the amount of crime by type, such as robbery, aggravated assualt, burglary and vehicle theft. It then helps us to understand if crime has increased or decreased and whether this correlates with public opinion or current events. </p>
+
+<div id="container"></div>
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Reported Violent Crime in the U.S.'
+    },
+    subtitle: {
+        text: 'Per 100,000 people from 1997 to 2016'
+    },
+    xAxis: {
+        categories: ['1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total reported violent crime (millions)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' million'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Total reported violent crime',
+        data: [1636096, 1533887, 1426044, 1425486, 1439480, 1423677, 1383676, 1360088, 1390745, 1435123, 1422970, 1394461, 1325896, 1251248, 1206005, 1217057, 1168298, 1153022, 1199310, 1248185]
+    }]
+});
+</script>
+
+<p>Source: FBI Criminal Justice Information Service Division, Violent Crime, Table 1. <a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/topic-pages/violent-crime" target="_blank">Crime in the United States by Volume and Rate per 100,000 Inhabitants, 1997–2016</a></p>
+
+<div id="chart"></div>
+
+<script>
+Highcharts.chart('chart', {
+
+    title: {
+        text: 'Reported Property Crime in the U.S.'
+    },
+
+    subtitle: {
+        text: 'Per 100,000 people from 1997 to 2016'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Total reported peoperty crime'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1997
+        }
+    },
+
+    series: [{
+        name: 'Years',
+        data: [11558475, 10951827, 10208334, 10182584, 10437189, 10455277, 10442862, 10319386, 10174754, 10019601, 9882212, 9774152, 9337060, 9112625, 9052743, 9001992, 8651892, 8209010, 8024115, 7919035]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+</script>
+
+<p> Source: FBI Criminal Justice Information Service Division, Violent Crime, Table 1. <a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/topic-pages/violent-crime" target="_blank">Crime in the United States by Volume and Rate per 100,000 Inhabitants, 1997–2016</a></p>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+body {
+  background-color: #A7C2FF;
+  margin: auto;
+  padding: 60px;
+  color: #000;
+}
+
+h1 {
+  font-family: 'Merriweather', 'Baskerville', serif;
+}
+
+p {
+  font-family: 'Lato', 'Arial', sans-serif;
+}
